@@ -1,7 +1,7 @@
-"""vedMedic URL Configuration
+"""Django1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,12 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import include
-from blog import urls
+from django.urls import path,include
+from app1 import views
 
 urlpatterns = [
+    path('',views.index),
     path('admin/', admin.site.urls),
-    path('',include('blog.urls')),
-    path('blog/',include('blog.urls'))
+    path('app1/',include('app1.urls'))
 ]
