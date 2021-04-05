@@ -1,7 +1,9 @@
-from django.urls import path,include
+from django.urls import path, include
 from . import views
 
-urlpatterns=[
-    path('',views.index),
-    # path('help/',views.help)
+app_name = 'app12'
+urlpatterns = [
+    path('index/', views.index,  name='index'),
+    path('other/',  views.other,  name='other'),
+    path('relative/',  views.relative,  name='relative')
 ]
